@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Behwe</string>
+    <string name="confirm_title">Confirm</string>
+    <string name="confirm_logout">Confirm Logout</string>
+    <string name="logout_msg">Are you sure you want to logout?</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+</resources>
