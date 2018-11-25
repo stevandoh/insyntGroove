@@ -31,25 +31,9 @@ interface BaseApiService {
         @Field("confirmPassword") confirmPassword: String
     ): Call<ServerResponse>
 
-//    irstname	String
-//    firstname of user
-//
-//    lastname	String
-//    lastname of user
-//
-//    phone	String
-//    Phone number of user
-//
-//    email	String
-//    email of user
-//
-//    password	String
-//    password of user
-
     @FormUrlEncoded
     @POST("/auth/signup")
     fun  SignupRequest(
-//        @Path("id") id: String,
         @Field("firstname") firstname: String,
         @Field("lastname") lastname: String,
         @Field("phone") phone: String,
