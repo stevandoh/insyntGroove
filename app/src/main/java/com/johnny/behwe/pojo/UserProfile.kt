@@ -1,4 +1,4 @@
-
+package com.johnny.behwe.pojo
 
 import com.google.gson.annotations.SerializedName
 

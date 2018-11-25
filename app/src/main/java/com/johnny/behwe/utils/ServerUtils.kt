@@ -1,10 +1,14 @@
-
+package com.johnny.behwe.utils
 
 import android.content.Context
 import com.afollestad.materialdialogs.MaterialDialog
+import com.google.gson.GsonBuilder
 import com.johnny.behwe.AppController
 import com.johnny.behwe.R
+import com.johnny.behwe.models.UserProfileMDL
+import com.johnny.behwe.pojo.ServerResponse
 import okhttp3.ResponseBody
+import retrofit2.Response
 import java.io.*
 import java.io.File.separator
 import java.net.ConnectException
@@ -30,6 +34,36 @@ class ServerUtils {
                     .show()
             }
         }
+
+        @JvmStatic
+        public fun getErrorMsg(context: Context, response: Response<ServerResponse>) {
+            val gson = GsonBuilder().create()
+            val jsonObject = gson.fromJson(
+                response.errorBody()!!.string()
+                , ServerResponse::class.java
+            )
+
+            GenUtils.getToastMessage(
+                context
+                , jsonObject.message
+            )
+        }
+
+        @JvmStatic
+        public fun getErrorSigninMsg(context: Context, response: Response<UserProfileMDL>) {
+            val gson = GsonBuilder().create()
+            val jsonObject = gson.fromJson(
+                response.errorBody()!!.string()
+                , ServerResponse::class.java
+            )
+
+            GenUtils.getToastMessage(
+                context
+                , jsonObject.message
+            )
+        }
+
+
 
 
         @JvmStatic

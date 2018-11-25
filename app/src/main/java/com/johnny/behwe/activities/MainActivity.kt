@@ -1,7 +1,8 @@
-package com.johnny.behwe
+package com.johnny.behwe.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.johnny.behwe.R
 
 class MainActivity : AppCompatActivity() {
 

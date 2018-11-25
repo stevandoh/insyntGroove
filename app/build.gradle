@@ -56,6 +56,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.0'
     implementation 'com.github.drawers:SpinnerDatePicker:1.0.6'
 
+//    implementation 'com.android.support:support-v4:28.0.0'
+
     // Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
@@ -73,10 +75,11 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 
     //Design
-//    def materialDialogLibrary = '0.9.6.0'
+    def materialDialogLibrary = '2.0.0-rc1'
 //    implementation "com.afollestad.material-dialogs:core:${materialDialogLibrary}"
 //    implementation "com.afollestad.material-dialogs:commons:${materialDialogLibrary}"
-    implementation 'com.afollestad.material-dialogs:core:2.0.0-rc1'
+    implementation "com.afollestad.material-dialogs:core:${materialDialogLibrary}"
+    implementation "com.afollestad.material-dialogs:input:${materialDialogLibrary}"
     implementation 'me.srodrigo:androidhintspinner:1.0.0'
     implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
     implementation("com.mikepenz:materialdrawer:6.0.8@aar") {

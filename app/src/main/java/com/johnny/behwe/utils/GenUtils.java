@@ -97,6 +97,19 @@ public class GenUtils {
         return true;
     }
 
+    public static boolean isEmailisValid(EditText textView, TextInputLayout textInputLayout,
+                                           String errorMessage) {
+
+        if (!FormattingUtils.Companion.validateEmail( textView.getText().toString().trim())) {
+
+            textInputLayout.setError(errorMessage);
+            return false;
+        } else {
+            textInputLayout.setErrorEnabled(false);
+        }
+        return true;
+    }
+
 
     private static String encodeImage(Bitmap bitmapImage) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

@@ -1,4 +1,7 @@
+package com.johnny.behwe.services
 
+import com.johnny.behwe.utils.networkUtils.BaseInterceptor
+import com.johnny.behwe.utils.networkUtils.CustomInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

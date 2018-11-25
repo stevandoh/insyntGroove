@@ -49,8 +49,8 @@ class AppController : Application() {
         var instance: AppController? = null
             private set
         val TAG = AppController::class.java.simpleName
-        val LIVE_API = "http://196.61.32.235:3000/v1/"
-        val TEST_API = "http://196.61.32.235:3000/v1/"
+        val LIVE_API = "http://209.97.186.177:3000/v1/"
+        val TEST_API = "http://209.97.186.177:3000/v1/"
         var BASE_API = ""
     }
 }

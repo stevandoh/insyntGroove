@@ -6,82 +6,140 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activities.SignupActivity">
-
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tiFname"
-            style="@style/FormStyle"
-
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
-
-        <com.google.android.material.textfield.TextInputEditText
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/loginPageBackgroundColor">
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="Enter First name"/>
-    </com.google.android.material.textfield.TextInputLayout>
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:paddingTop="16dp">
+            <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:tint="?android:attr/textColorPrimary"
+                    app:srcCompat="@drawable/shr_logo" />
 
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tiLname"
-            style="@style/FormStyle"
-            app:layout_constraintTop_toBottomOf="@+id/tiFname"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title" />
 
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="Enter Last name"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            style="@style/FormStyle"
-            android:id="@+id/tiPhone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiLname">
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiFname"
+                    style="@style/Widget.Shrine.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Firstname"
+            >
 
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:maxLength="11"
-                android:hint="Enter Phone"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            style="@style/FormStyle"
-            android:id="@+id/tiEmail"
-            app:layout_constraintTop_toBottomOf="@+id/tiPhone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-    >
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:maxLength="60"
-                android:hint="Enter Email"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tiPwd"
-            style="@style/FormStyle"
-            app:layout_constraintTop_toBottomOf="@+id/tiEmail"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="20"
-                android:hint="Enter Password"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiLname"
+                    style="@style/Widget.Shrine.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lastname"
+            >
 
-    <Button
-            style="@style/FormStyle"
-            android:text="Button"
-            android:id="@+id/btnSignup"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiPwd"
-            app:layout_constraintEnd_toEndOf="parent"
-    />
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/tiPhone"
+                    style="@style/Widget.Shrine.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone number"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/tiEmail"
+                    style="@style/Widget.Shrine.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+            >
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="60"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tiPwd"
+                    style="@style/Widget.Shrine.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="50"
+                        android:inputType="textPassword"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSignup"
+                        style="@style/Widget.Shrine.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/button_signup" />
+
+                <!--<com.google.android.material.button.MaterialButton-->
+                        <!--android:id="@+id/btnSignup"-->
+                        <!--style="@style/Widget.Shrine.Button.TextButton"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginEnd="12dp"-->
+                        <!--android:layout_marginRight="12dp"-->
+                        <!--android:layout_toStartOf="@id/btnSignin"-->
+                        <!--android:layout_toLeftOf="@id/btnSignin"-->
+                        <!--android:text="@string/button_signup" />-->
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

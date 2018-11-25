@@ -1,13 +1,13 @@
-
-
+package com.johnny.behwe.services
 
 import com.johnny.behwe.models.UserProfileMDL
+import com.johnny.behwe.pojo.ServerResponse
 import retrofit2.Call
 import retrofit2.http.*
 
 interface BaseApiService {
     @FormUrlEncoded
-    @POST("auth/login/agent")
+    @POST("auth/login")
     fun signinRequest(
         @Field("email") username: String,
         @Field("password") password: String
@@ -33,7 +33,7 @@ interface BaseApiService {
 
     @FormUrlEncoded
     @POST("/auth/signup")
-    fun  SignupRequest(
+    fun  signupRequest(
         @Field("firstname") firstname: String,
         @Field("lastname") lastname: String,
         @Field("phone") phone: String,

@@ -1,5 +1,4 @@
-
-
+package com.johnny.behwe.utils
 import java.util.*
 
 class SpinnerUtils {
