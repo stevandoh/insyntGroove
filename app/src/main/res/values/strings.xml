@@ -8,4 +8,23 @@
     <string name="hint_password">Password</string>
     <string name="button_signup">Signup</string>
     <string name="button_signin">Signin</string>
+    <string name="cloudinary_key">cloudinary://439861538468128:4IjHDhsHHiW50i_xnmUdWhY1tyw@gidkom</string>
+    <string name="filter_title">Filter</string>
+    <string name="search_title">Search</string>
+    <string name="ad_title">Title</string>
+    <string name="ad_description">Secondary text</string>
+
+    <!-- Shrine backdrop menu labels -->
+    <string name="featured_label">Featured</string>
+    <string name="apartment_label">Apartment</string>
+    <string name="accessories_label">Accessories</string>
+    <string name="shoes_label">Shoes</string>
+    <string name="tops_label">Tops</string>
+    <string name="bottoms_label">Bottoms</string>
+    <string name="dresses_label">Dresses</string>
+    <string name="account_label">My Account</string>
+    <string name="add_title">title</string>
+    <string name="add_description">description</string>
+    <string name="title_activity_create_ad">CreateAdActivity</string>
+    <string name="button_create_add">Create ad</string>
 </resources>

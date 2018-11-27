@@ -20,25 +20,34 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Shrine">
         <activity android:name=".activities.MainActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".activities.SigninActivity"
-        android:screenOrientation="portrait">
+        <activity
+                android:name=".activities.SigninActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SignupActivity"
-        android:screenOrientation="portrait">
+        <activity
+                android:name=".activities.SignupActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activities.ResetPasswordActivity"
-        android:screenOrientation="portrait">
+        <activity
+                android:name=".activities.ResetPasswordActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".activities.CreateAdActivity"
+                android:label="@string/title_activity_create_ad">
         </activity>
     </application>
 

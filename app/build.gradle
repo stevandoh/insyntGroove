@@ -86,7 +86,7 @@ dependencies {
         transitive = true
     }
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
-    implementation "com.github.vicpinm:krealmextensions:2.2.0"
+    implementation "com.github.vicpinm:krealmextensions:2.3.0"
     implementation 'io.realm:android-adapters:2.1.1'
     implementation 'com.wajahatkarim3.EasyMoney-Widgets:EasyMoney-Widgets:1.0.0'
 
@@ -100,5 +100,7 @@ dependencies {
     implementation 'eu.giovannidefrancesco.sweetprefs:sweetprefs:1.0.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'me.srodrigo:androidhintspinner:1.0.0'
+    implementation group: 'com.cloudinary', name: 'cloudinary-android', version: '1.24.0'
+
 
 }

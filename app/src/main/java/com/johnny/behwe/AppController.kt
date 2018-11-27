@@ -5,6 +5,13 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import com.cloudinary.android.MediaManager
+//import javax.swing.UIManager.put
+
+
+
+
+
 
 class AppController : Application() {
 //    val BASE_URL =
@@ -29,6 +36,15 @@ class AppController : Application() {
         } else {
             BASE_API = LIVE_API
         }
+
+//        val config = MutableMap()
+//        config.put("cloud_name", "myCloudName")
+//        MediaManager.init(this, config)
+
+        val configCloudinary:HashMap<String,String> = HashMap()
+        configCloudinary.put("cloud_name", getString(R.string.cloudinary_key))
+        MediaManager.init(this, configCloudinary)
+
     }
 
 

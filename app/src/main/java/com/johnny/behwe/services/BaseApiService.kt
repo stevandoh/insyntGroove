@@ -15,7 +15,7 @@ interface BaseApiService {
     ): Call<UserProfileMDL>
 
     @FormUrlEncoded
-    @POST("/auth/password/forgot")
+    @POST("auth/password/forgot")
     fun forgotPasswordRequest(
 //        @Path("id") id: String,
         @Field("email") username: String
@@ -32,13 +32,67 @@ interface BaseApiService {
     ): Call<ServerResponse>
 
     @FormUrlEncoded
-    @POST("/auth/signup")
-    fun  signupRequest(
+    @POST("auth/signup")
+    fun signupRequest(
         @Field("firstname") firstname: String,
         @Field("lastname") lastname: String,
-        @Field("phone") phone: String,
+//        @Field("phone") phone: String,
         @Field("email") username: String,
         @Field("password") password: String
 //        @Field("deviceToken") playerId: String
+    ): Call<ServerResponse>
+
+    @GET("users/{id}")
+    fun getUserDetailsRequest(
+        @Path("id") id: String
+    ): Call<ServerResponse>
+
+    @FormUrlEncoded
+    @POST("ads/create")
+    fun createAdRequest(
+        @Field("title") title: String,
+        @Field("description") description: String,
+        @Field("media") media: String
+    ): Call<ServerResponse>
+
+    @FormUrlEncoded
+    @PUT("ads/{id}")
+    fun updateAdRequest(
+        @Path("id") id: String,
+        @Field("title") title: String,
+        @Field("description") description: String,
+        @Field("media") media: String
+    ): Call<ServerResponse>
+
+    @GET("ads/{id}")
+    fun getAdDetailsRequest(
+        @Path("id") id: String
+    ): Call<ServerResponse>
+
+    @GET("ads?page=1&limit=50")
+    fun getAdListRequest(
+        @Path("id") id: String
+    ): Call<ServerResponse>
+
+    @DELETE("ads/{id}")
+    fun deleteAdRequest(
+        @Path("id") id: String
+    ): Call<ServerResponse>
+
+    @FormUrlEncoded
+    @POST("payments")
+    fun collectPaymentRequest(@Field("phone") phone: String,
+                              @Field("amount") amount: String,
+                              @Field("network") network: String
+
+    ): Call<ServerResponse>
+
+    @FormUrlEncoded
+    @POST("payments")
+    fun collectVodafonePaymentRequest(@Field("phone") phone: String,
+                                      @Field("amount") amount: String,
+                                      @Field("network") network: String,
+                                      @Field("token") type: String
+
     ): Call<ServerResponse>
 }

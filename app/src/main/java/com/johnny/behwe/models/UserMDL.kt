@@ -23,9 +23,9 @@ open class UserMDL: RealmObject() {
     @Expose
     var role: String? = null
 
-    @SerializedName("username")
-    @Expose
-    var username: String? = null
+//    @SerializedName("username")
+//    @Expose
+//    var username: String? = null
 
     var pin: String? = null
 

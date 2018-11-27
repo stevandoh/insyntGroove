@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
 import android.text.InputType
 import android.util.Log
 import android.view.View
@@ -130,7 +131,10 @@ class SigninActivity : AppCompatActivity() {
             tiEmail.error = "Email field cannot be empty"
             tiPwd.error = "Password field cannot be empty"
             GenUtils.getToastMessage(applicationContext, "None of the fields must be empty")
-        } else if (!emailError) {
+        } else if(!isPasswordValid(tiPwd.editText!!.text)){
+            tiPwd.error ="Password must contain at least 8 characters"
+        }
+        else if (!emailError) {
             tiEmail.error = "Enter a valid email"
             GenUtils.getToastMessage(applicationContext, "Enter a valid email")
         } else {
@@ -231,6 +235,10 @@ class SigninActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
+    }
+
+    private fun isPasswordValid(text: Editable?): Boolean {
+        return text != null && text.length >= 8
     }
 
 

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.johnny.behwe.R
@@ -64,24 +65,32 @@ class SignupActivity : AppCompatActivity() {
             , tiLname
             , "Lastname is required"
         )
-        val phoneError = GenUtils.isEmpty(
-            tiPhone.editText
-            , tiPhone
-            , "Phone number is required"
-        )
-        val phoneDigitError= GenUtils.isNotEnoughDigit(
-            tiPhone.editText
-            , tiPhone
-            , "Phone number is not valid"
-        )
+//        val phoneError = GenUtils.isEmpty(
+//            tiPhone.editText
+//            , tiPhone
+//            , "Phone number is required"
+//        )
+//        val phoneDigitError= GenUtils.isNotEnoughDigit(
+//            tiPhone.editText
+//            , tiPhone
+//            , "Phone number is not valid"
+//        )
         val emailError = FormattingUtils.validateEmail(tiEmail.editText.toString())
 
 
-        if (!(firstnameError && lastnameError && phoneError &&  usernameError && passwordError  )) {
+        if (!(firstnameError && lastnameError &&  usernameError && passwordError  )) {
+            tiFname.error = "Firstname field cannot be empty"
+            tiLname.error = "Lastname field cannot be empty"
+            tiEmail.error = "Email field cannot be empty"
+            tiPwd.error = "Password field cannot be empty"
             GenUtils.getToastMessage(applicationContext, "None of the fields must be empty")
-        }else if(!phoneDigitError){
-            GenUtils.getToastMessage(applicationContext, "Enter a valid phone number")
+        }else if(!isPasswordValid(tiPwd.editText!!.text)){
+            tiPwd.error = "Password must contain at least 8 characters"
+
         }
+//        else if(!phoneDigitError){
+//            GenUtils.getToastMessage(applicationContext, "Enter a valid phone number")
+//        }
         else if(!emailError){
             GenUtils.getToastMessage(applicationContext, "Enter a valid email")
         }
@@ -96,7 +105,7 @@ class SignupActivity : AppCompatActivity() {
             mApiService!!.signupRequest(
                 tiFname.editText!!.text.toString().trim(),
                 tiLname.editText!!.text.toString().trim(),
-                tiPhone.editText!!.text.toString().trim(),
+//                tiPhone.editText!!.text.toString().trim(),
                 tiEmail.editText!!.text.toString().trim()
                 ,tiPwd.editText!!.text.toString()
             ).enqueue(object : Callback<ServerResponse> {
@@ -163,6 +172,11 @@ class SignupActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
+    private fun isPasswordValid(text: Editable?): Boolean {
+        return text != null && text.length >= 8
+    }
+
 
 
 }
