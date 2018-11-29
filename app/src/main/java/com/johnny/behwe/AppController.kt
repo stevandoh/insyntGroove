@@ -42,7 +42,7 @@ class AppController : Application() {
 //        MediaManager.init(this, config)
 
         val configCloudinary:HashMap<String,String> = HashMap()
-        configCloudinary.put("cloud_name", getString(R.string.cloudinary_key))
+        configCloudinary.put("cloud_name", "stevandoh")
         MediaManager.init(this, configCloudinary)
 
     }

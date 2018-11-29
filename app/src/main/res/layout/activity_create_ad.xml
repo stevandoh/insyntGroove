@@ -9,10 +9,11 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/loginPageBackgroundColor">
+            android:background="@color/loginPageBackgroundColor" tools:layout_editor_absoluteY="415dp"
+            tools:layout_editor_absoluteX="0dp">
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:orientation="vertical"
@@ -46,54 +47,38 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textMultiLine"
-
                 />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
 
-                    android:id="@+id/tiEmail"
-                    style="@style/Widget.Shrine.TextInputLayout"
+            <ImageButton
+                    android:id="@+id/imgUpload"
+                    app:srcCompat="@drawable/ic_file_upload"
+                    android:tooltipText="Select image"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"/>
+
+
+            <TextView
+                    android:text=""
+                    android:padding="8dp"
+                    android:layout_margin="8dp"
+                    android:hint="image path will display here"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email"
-            >
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"
-                        android:maxLength="60"
-                />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tiPwd"
-                    style="@style/Widget.Shrine.TextInputLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-            >
-
-                <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:maxLength="50"
-                        android:inputType="textPassword"
-                />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
+                    android:layout_height="wrap_content" android:id="@+id/tvImgPath"/>
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnSignup"
-                        style="@style/Widget.Shrine.Button"
+                <Button
+                        android:id="@+id/btnCreateAd"
+                        android:background="@color/colorPrimaryDark"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:text="@string/button_create_add" />
+                        android:text="@string/button_create_add"/>
+
 
                 <!--<com.google.android.material.button.MaterialButton-->
                 <!--android:id="@+id/btnSignup"-->
@@ -108,9 +93,16 @@
 
             </RelativeLayout>
 
+            <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:id="@+id/progressBar"/>
+
 
         </LinearLayout>
     </ScrollView>
-    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

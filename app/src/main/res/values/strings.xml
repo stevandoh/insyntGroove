@@ -27,4 +27,9 @@
     <string name="add_description">description</string>
     <string name="title_activity_create_ad">CreateAdActivity</string>
     <string name="button_create_add">Create ad</string>
+    <string name="drawer_create_ad">Create Ad</string>
+    <string name="drawer_home">Home</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_user_management">UserManagementActivity</string>
+    <string name="title_activity_wallet">WalletActivity</string>
 </resources>

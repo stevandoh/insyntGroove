@@ -50,6 +50,20 @@ class ServerUtils {
         }
 
         @JvmStatic
+        public fun getErrorMsgfromResponseBody(context: Context, response: Response<ResponseBody>) {
+            val gson = GsonBuilder().create()
+            val jsonObject = gson.fromJson(
+                response.errorBody()!!.string()
+                , ServerResponse::class.java
+            )
+
+            GenUtils.getToastMessage(
+                context
+                , jsonObject.message
+            )
+        }
+
+        @JvmStatic
         public fun getErrorSigninMsg(context: Context, response: Response<UserProfileMDL>) {
             val gson = GsonBuilder().create()
             val jsonObject = gson.fromJson(

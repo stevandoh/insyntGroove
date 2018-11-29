@@ -2,6 +2,7 @@ package com.johnny.behwe.services
 
 import com.johnny.behwe.models.UserProfileMDL
 import com.johnny.behwe.pojo.ServerResponse
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 

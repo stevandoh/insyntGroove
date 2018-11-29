@@ -16,4 +16,5 @@
     <dimen name="staggered_ad_grid_card_height_portrait">247dp</dimen>
     <dimen name="staggered_ad_grid_card_width_landscape">188dp</dimen>
     <dimen name="staggered_ad_grid_card_height_landscape">140dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

@@ -46,10 +46,12 @@ dependencies {
 //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     def supportLibrary = '28.0.0'
+    def androidX = '1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "androidx.annotation:annotation:${androidX}"
 
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
@@ -80,11 +82,12 @@ dependencies {
 //    implementation "com.afollestad.material-dialogs:commons:${materialDialogLibrary}"
     implementation "com.afollestad.material-dialogs:core:${materialDialogLibrary}"
     implementation "com.afollestad.material-dialogs:input:${materialDialogLibrary}"
+    implementation "com.afollestad.material-dialogs:files:${materialDialogLibrary}"
+    implementation 'com.afollestad:assent:2.2.0'
     implementation 'me.srodrigo:androidhintspinner:1.0.0'
     implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.3'
-    implementation("com.mikepenz:materialdrawer:6.0.8@aar") {
-        transitive = true
-    }
+    implementation "com.mikepenz:materialdrawer:6.1.1"
+
     implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
     implementation "com.github.vicpinm:krealmextensions:2.3.0"
     implementation 'io.realm:android-adapters:2.1.1'
@@ -100,7 +103,7 @@ dependencies {
     implementation 'eu.giovannidefrancesco.sweetprefs:sweetprefs:1.0.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'me.srodrigo:androidhintspinner:1.0.0'
-    implementation group: 'com.cloudinary', name: 'cloudinary-android', version: '1.24.0'
+    implementation group: 'com.cloudinary', name: 'cloudinary-android', version: '1.25.0'
 
 
 }
