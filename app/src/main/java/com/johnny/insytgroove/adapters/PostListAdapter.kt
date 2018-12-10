@@ -47,7 +47,7 @@ class PostListAdapter(internal var context: Context, private var postMDLList: Mu
 
         Glide
             .with(context)
-            .load(R.drawable.default_img)
+            .load(R.drawable.blog_post)
             .into(holder.itemImage!!);
 
         holder.tvTitle!!.text = obj.title

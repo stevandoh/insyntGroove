@@ -42,4 +42,5 @@
     <string name="hint_email">Email</string>
     <string name="button_submit">Submit</string>
     <string name="hint_title">Title</string>
+    <string name="select">Select</string>
 </resources>

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItems
+import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.google.android.material.snackbar.Snackbar
 import com.johnny.insytgroove.R
 import com.johnny.insytgroove.adapters.PostListAdapter
@@ -48,13 +49,28 @@ class PostListActivity : AppCompatActivity() {
         ItemClickSupport.addTo(rv).setOnItemClickListener { _, position, _ ->
             GenUtils.getToastMessage(applicationContext, position.toString())
 
-            MaterialDialog(this).show {
-
-                listItems(R.array.socialNetworks)
-            }
-            displayDialog(position)
+            displayDialogList(position)
+//            displayDialog(position)
         }
 
+    }
+
+    private fun displayDialogList(position: Int) {
+        MaterialDialog(this).show {
+            listItemsSingleChoice(R.array.items_comment) { dialog, index, text ->
+                // Invoked when the user selects an item
+                if (index == 0) {
+               startActivity(     Intent(this@PostListActivity, CommentListActivity::class.java)
+                        .putExtra("postId", postsMDLs!![position].id))
+
+                }
+                if (index == 1) {
+                    displayDialog(position)
+                }
+            }
+            positiveButton(R.string.select)
+
+        }
     }
 
     private fun displayDialog(position: Int) {

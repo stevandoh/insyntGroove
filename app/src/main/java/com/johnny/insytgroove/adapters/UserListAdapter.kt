@@ -46,7 +46,7 @@ class UserListAdapter(internal var context: Context, private var userMDLList: Mu
 
         Glide
             .with(context)
-            .load(R.drawable.default_img)
+            .load(R.drawable.bloggers)
             .into(holder.itemImage);
 
         holder.tvTitle!!.text = obj.username

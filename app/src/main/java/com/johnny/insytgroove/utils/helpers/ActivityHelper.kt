@@ -2,8 +2,11 @@
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Intent
 import com.afollestad.materialdialogs.MaterialDialog
 import com.johnny.insytgroove.R
+import com.johnny.insytgroove.activities.SigninActivity
+import com.johnny.insytgroove.utils.SharedPrefManager
 
 class ActivityHelper {
 
@@ -36,7 +39,7 @@ class ActivityHelper {
                 .message(R.string.logout_msg)
                 .negativeButton(R.string.btn_cancel)
                 .positiveButton(R.string.btn_ok){ dialog ->
-//                    signout(activity)
+                    signout(activity)
                 }
                 .show()
 
@@ -44,18 +47,18 @@ class ActivityHelper {
 
         }
 //
-//        fun signout(activity: Activity) {
-//            val mSharedPrefManager: SharedPrefManager? = SharedPrefManager(activity.applicationContext)
-//            mSharedPrefManager!!.clear()
+        fun signout(activity: Activity) {
+            val mSharedPrefManager: SharedPrefManager? = SharedPrefManager(activity.applicationContext)
+            mSharedPrefManager!!.clear()
 //            UserProfileMDL().deleteAll()
-//            activity.startActivity(
-//                Intent(
-//                     activity,
-//                    SigninActivity::class.java
-//                )
-//            )
-//            activity.finish()
-//        }
+            activity.startActivity(
+                Intent(
+                     activity,
+                    SigninActivity::class.java
+                )
+            )
+            activity.finish()
+        }
 
 
     }

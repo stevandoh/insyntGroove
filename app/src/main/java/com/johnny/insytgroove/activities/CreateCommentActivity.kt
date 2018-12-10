@@ -23,6 +23,11 @@ class CreateCommentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_comment)
         setSupportActionBar(toolbar)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        }
+
+
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()

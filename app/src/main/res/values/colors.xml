@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8ec641 </color>
-    <color name="colorPrimaryDark">#5d8b28</color>
+    <color name="colorPrimaryDark">#1f76ba </color>
+    <color name="colorPrimary">#70bef0</color>
     <color name="colorAccent">#D81B60</color>
 
     <!--<color name="colorPrimary">#E0E0E0</color>-->
@@ -11,6 +11,6 @@
     <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFBFA</color>
-    <color name="colorControlActivated">#8ec641</color>
+    <color name="colorControlActivated">#70bef0</color>
     <color name="textColorSecondary">#e0e0e0</color>
 </resources>

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string-array name="items_comment">
+        <item>View Comments</item>
+        <item>Add Comments</item>
+    </string-array>
 </resources>
