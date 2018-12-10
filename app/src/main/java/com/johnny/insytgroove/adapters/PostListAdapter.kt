@@ -19,7 +19,7 @@ class PostListAdapter(internal var context: Context, private var postMDLList: Mu
     RecyclerView.Adapter<PostListAdapter.PostListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostListAdapter.PostListViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.post_row,null)
+            .inflate(R.layout.post_row, parent, false)
         return PostListViewHolder(itemView)
     }
 

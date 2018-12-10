@@ -11,7 +11,7 @@ open class UserMDL: RealmObject() {
     @PrimaryKey
     @SerializedName("id")
     @Expose
-   var id: Long = 0
+   var id: Int = 0
     @SerializedName("name")
     @Expose
    var name: String? = null

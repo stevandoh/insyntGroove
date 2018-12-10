@@ -34,5 +34,8 @@
     <string name="title_activity_wallet">Wallet</string>
     <string name="title_activity_create">Create Ad</string>
     <string name="title_activity_dashboard">Dashboard</string>
-    <string name="title_activity_post_list">Posts </string>
+    <string name="title_activity_post_list">Posts</string>
+    <string name="title_activity_comment_list">CommentListActivity</string>
+    <string name="title_activity_create_comment">CreateCommentActivity</string>
+    <string name="agree">Yes</string>
 </resources>

@@ -48,10 +48,6 @@ class SigninActivity : AppCompatActivity() {
             login()
 
         }
-//        btnSignup.setOnClickListener {
-//            startActivity(Intent(this@SigninActivity, SignupActivity::class.java))
-//        }
-
     }
 
 
@@ -118,34 +114,15 @@ class SigninActivity : AppCompatActivity() {
                                 ).show()
 
                                 response.body()!!.saveAll()
-//                                for (i in 0 until response.body()!!.size){
-//
-//                                    mRealm!!.executeTransaction{
-//
-//                                        mRealm!!.copyToRealmOrUpdate(response.body()!![i])
-//                                    }
-//
-//                                }
                                 getPosts()
                                 setUpLogin()
                             }
-//                        response.code() == 403 -> {
-//                            progressBar.visibility = View.GONE
-//                            ServerUtils.getErrorSigninMsg(applicationContext, response)
-//                        }
-//                        response.code() == 422 -> {
-//                            progressBar.visibility = View.GONE
-////                            val gson = GsonBuilder().create()
-//                            ServerUtils.getErrorSigninMsg(applicationContext, response)
-//                        }
 
                         }
                     }
 
                     override fun onFailure(call: Call<RealmList<UserMDL>>, t: Throwable) {
-//                        if (mProgressDialog != null && mProgressDialog!!.isShowing) {
-//                            mProgressDialog!!.dismiss()
-//                        }
+
                         progressBar.visibility = View.GONE
                         Log.e("debug", "onFailure: ERROR > " + t.message)
                         checkConnectivity(t, this@SigninActivity)
@@ -157,8 +134,6 @@ class SigninActivity : AppCompatActivity() {
                 GenUtils.getToastMessage(applicationContext,"invalid username or password")
             }
 
-
-//            }
         }
     }
 
@@ -178,27 +153,9 @@ class SigninActivity : AppCompatActivity() {
                             this@SigninActivity
                             , "login successful", Toast.LENGTH_LONG
                         ).show()
-
                         response.body()!!.saveAll()
-//                                for (i in 0 until response.body()!!.size){
-//
-//                                    mRealm!!.executeTransaction{
-//
-//                                        mRealm!!.copyToRealmOrUpdate(response.body()!![i])
-//                                    }
-//
-//                                }
-                        setUpLogin()
                     }
-//                        response.code() == 403 -> {
-//                            progressBar.visibility = View.GONE
-//                            ServerUtils.getErrorSigninMsg(applicationContext, response)
-//                        }
-//                        response.code() == 422 -> {
-//                            progressBar.visibility = View.GONE
-////                            val gson = GsonBuilder().create()
-//                            ServerUtils.getErrorSigninMsg(applicationContext, response)
-//                        }
+
 
                 }
             }
@@ -215,49 +172,6 @@ class SigninActivity : AppCompatActivity() {
         })
 
     }
-
-
-//    private fun setForgotPwd(username: String) {
-//
-//        mApiService!!.forgotPasswordRequest(
-//            username
-//
-//        ).enqueue(object : Callback<ServerResponse> {
-//            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-//            override fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
-//                if (response.isSuccessful) {
-////                    dismissProgressDialog()
-//                    Log.d("Result", response.body().toString())
-//                    if (!response.body()!!.success) {
-//                        GenUtils.getToastMessage(applicationContext, response.body()!!.message)
-//                    }
-//
-//                } else if (response.code() == 403) {
-////                    dismissProgressDialog()
-//                    progressBar.visibility = View.GONE
-//                    ServerUtils.getErrorMsg(applicationContext, response)
-//
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<ServerResponse>, t: Throwable) {
-//
-////                dismissProgressDialog()
-//                progressBar.visibility = View.GONE
-//                Log.e("debug", "onFailure: ERROR > " + t.message)
-//                checkConnectivity(t, this@SigninActivity)
-//            }
-//        })
-//
-//    }
-
-
-//    private fun dismissProgressDialog() {
-//        if (mProgressDialog != null && mProgressDialog!!.isShowing) {
-//            mProgressDialog!!.dismiss()
-//        }
-//    }
-
     override fun onDestroy() {
         super.onDestroy()
 
