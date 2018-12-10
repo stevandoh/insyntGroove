@@ -7,7 +7,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.johnny.behwe.R
+import com.johnny.behwe.adapters.AdListAdapter
+import com.johnny.behwe.interfaces.PlaceInfoListener
+import com.johnny.behwe.models.AdMDL
 import com.johnny.behwe.models.UserProfileMDL
 import com.johnny.behwe.utils.Constants
 import com.johnny.behwe.utils.SharedPrefManager
@@ -19,18 +23,16 @@ import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
-import com.vicpin.krealmextensions.queryFirst
-import kotlinx.android.synthetic.main.activity_main.*
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager
-import com.johnny.behwe.adapters.AdListAdapter
-import com.johnny.behwe.models.AdMDL
 import com.vicpin.krealmextensions.queryAll
-import com.vicpin.krealmextensions.querySorted
-import io.realm.Sort
-import kotlinx.android.synthetic.main.content_main.*
+import com.vicpin.krealmextensions.queryFirst
 
-class MainActivity : AppCompatActivity() {
+
+import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.content_dashboard.*
+
+
+class DashboardActivity : AppCompatActivity() ,PlaceInfoListener{
+
 
     internal var mDrawer: Drawer? = null
     internal var headerResult: AccountHeader? = null
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_dashboard)
         setSupportActionBar(toolbar)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_menu)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -50,9 +52,6 @@ class MainActivity : AppCompatActivity() {
         if (userProfileMDL == null) {
             ActivityHelper.signoutDialog(this)
         }
-
-//        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-
         headerResult = AccountHeaderBuilder()
             .withActivity(this)
 //                .withHeaderBackground(R.drawable.nav_bg)
@@ -64,7 +63,6 @@ class MainActivity : AppCompatActivity() {
 //        .withIcon(R.drawable.nopic)
             )
             .build()
-
 
         mDrawer = DrawerBuilder()
             .withAccountHeader(headerResult!!)
@@ -120,7 +118,7 @@ class MainActivity : AppCompatActivity() {
 
                     }
                     if (drawerItem.identifier == Constants.DRAWER_CREATE_AD) {
-                        intent = Intent(this@MainActivity, CreateAdActivity::class.java)
+                        intent = Intent(this@DashboardActivity, CreateActivity::class.java)
                         startActivity(intent)
 
                     }
@@ -140,19 +138,23 @@ class MainActivity : AppCompatActivity() {
                     }
 
 
-
                 }
 
                 false
             }.build()
 
-        fabCreateAd.setOnClickListener {
-            startActivity(Intent(this@MainActivity, CreateAdActivity::class.java))
-        }
+//        fabCreateAd.setOnClickListener {
+//            startActivity(Intent(this@DashboardActivity, CreateActivity::class.java))
+//        }
 
         populateGrid()
 
 
+        fab.setOnClickListener { view ->
+            startActivity(Intent(this@DashboardActivity, CreateActivity::class.java))
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -174,8 +176,8 @@ class MainActivity : AppCompatActivity() {
     fun populateGrid() {
 
 
-        adMDLs =  AdMDL().queryAll()
-        if(!adMDLs!!.isEmpty()){
+        adMDLs = AdMDL().queryAll()
+        if (!adMDLs!!.isEmpty()) {
             tvNoAd.visibility = View.GONE
             rv.visibility = View.VISIBLE
             adListAdapter = AdListAdapter(this, (adMDLs as MutableList<AdMDL>?)!!)
@@ -186,6 +188,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+
+    }
+
+    override fun onPopupMenuClick(view: View, pos: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 

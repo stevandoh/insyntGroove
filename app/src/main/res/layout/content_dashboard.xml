@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_wallet"
-        tools:context=".activities.WalletActivity">
+        tools:showIn="@layout/activity_dashboard"
+        tools:context=".activities.DashboardActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

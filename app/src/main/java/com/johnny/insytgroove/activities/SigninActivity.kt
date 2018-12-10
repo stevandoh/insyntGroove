@@ -97,7 +97,7 @@ class SigninActivity : AppCompatActivity() {
         mSharedPrefManager!!.saveIsLoggedIn(this, true)
 //        Toast.makeText(this@SigninActivity, "Login successful",
 //                Toast.LENGTH_SHORT).show()
-        val intent = Intent(this@SigninActivity, MainActivity::class.java)
+        val intent = Intent(this@SigninActivity, DashboardActivity::class.java)
 //        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
@@ -105,7 +105,7 @@ class SigninActivity : AppCompatActivity() {
 
     private fun checkAlreadyLogin() {
         if (mSharedPrefManager!!.isLogged_IN) { //IS_LOGGED_IN
-            val intent = Intent(this@SigninActivity, MainActivity::class.java)
+            val intent = Intent(this@SigninActivity, DashboardActivity::class.java)
 //            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
