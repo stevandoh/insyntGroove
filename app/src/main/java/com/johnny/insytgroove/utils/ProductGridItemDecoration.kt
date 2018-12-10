@@ -1,4 +1,4 @@
-package com.johnny.behwe.utils
+package com.johnny.insytgroove.utils
 
 import android.graphics.Rect
 import android.view.View

@@ -1,4 +1,4 @@
-package com.johnny.behwe.activities
+package com.johnny.insytgroove.activities
 
 import ActivityHelper
 import android.content.Intent
@@ -8,13 +8,15 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.johnny.behwe.R
-import com.johnny.behwe.adapters.AdListAdapter
-import com.johnny.behwe.interfaces.PlaceInfoListener
-import com.johnny.behwe.models.AdMDL
-import com.johnny.behwe.models.UserProfileMDL
-import com.johnny.behwe.utils.Constants
-import com.johnny.behwe.utils.SharedPrefManager
+import com.johnny.insytgroove.R
+import com.johnny.insytgroove.adapters.UserListAdapter
+import com.johnny.insytgroove.models.AdMDL
+import com.johnny.insytgroove.models.UserMDL
+import com.johnny.insytgroove.models.UserProfileMDL
+import com.johnny.insytgroove.utils.Constants
+import com.johnny.insytgroove.utils.GenUtils
+import com.johnny.insytgroove.utils.ItemClickSupport
+import com.johnny.insytgroove.utils.SharedPrefManager
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
@@ -31,15 +33,15 @@ import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.content_dashboard.*
 
 
-class DashboardActivity : AppCompatActivity() ,PlaceInfoListener{
+class DashboardActivity : AppCompatActivity() {
 
 
-    internal var mDrawer: Drawer? = null
-    internal var headerResult: AccountHeader? = null
-    internal var mSharedPrefManager: SharedPrefManager? = null
-    private var adListAdapter: AdListAdapter? = null
-    private var adMDLs: List<AdMDL>? = null
-    private var adCategory: String? = null
+    private var mDrawer: Drawer? = null
+    private var headerResult: AccountHeader? = null
+    private var mSharedPrefManager: SharedPrefManager? = null
+    private var userListAdapter: UserListAdapter? = null
+    private var userMDLs: List<UserMDL>? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +50,10 @@ class DashboardActivity : AppCompatActivity() ,PlaceInfoListener{
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_menu)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         mSharedPrefManager = SharedPrefManager(applicationContext)
-        val userProfileMDL = UserProfileMDL().queryFirst()
-        if (userProfileMDL == null) {
-            ActivityHelper.signoutDialog(this)
-        }
+//        val userProfileMDL = UserProfileMDL().queryFirst()
+//        if (userProfileMDL == null) {
+//            ActivityHelper.signoutDialog(this)
+//        }
         headerResult = AccountHeaderBuilder()
             .withActivity(this)
 //                .withHeaderBackground(R.drawable.nav_bg)
@@ -118,8 +120,8 @@ class DashboardActivity : AppCompatActivity() ,PlaceInfoListener{
 
                     }
                     if (drawerItem.identifier == Constants.DRAWER_CREATE_AD) {
-                        intent = Intent(this@DashboardActivity, CreateActivity::class.java)
-                        startActivity(intent)
+//                        intent = Intent(this@DashboardActivity, CreateActivity::class.java)
+//                        startActivity(intent)
 
                     }
 
@@ -148,10 +150,16 @@ class DashboardActivity : AppCompatActivity() ,PlaceInfoListener{
 //        }
 
         populateGrid()
+        ItemClickSupport.addTo(rv).setOnItemClickListener { _, position, _ ->
+            GenUtils.getToastMessage(applicationContext,position.toString())
+
+            startActivity(Intent(this@DashboardActivity,PostListActivity::class.java)
+                .putExtra("userId",userMDLs!![position].id))
+        }
 
 
         fab.setOnClickListener { view ->
-            startActivity(Intent(this@DashboardActivity, CreateActivity::class.java))
+//            startActivity(Intent(this@DashboardActivity, CreateActivity::class.java))
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
         }
@@ -173,27 +181,23 @@ class DashboardActivity : AppCompatActivity() ,PlaceInfoListener{
         }
     }
 
-    fun populateGrid() {
+   private fun populateGrid() {
 
 
-        adMDLs = AdMDL().queryAll()
-        if (!adMDLs!!.isEmpty()) {
+        userMDLs = UserMDL().queryAll()
+        if (!userMDLs!!.isEmpty()) {
             tvNoAd.visibility = View.GONE
             rv.visibility = View.VISIBLE
-            adListAdapter = AdListAdapter(this, (adMDLs as MutableList<AdMDL>?)!!)
+            userListAdapter = UserListAdapter(this, (userMDLs as MutableList<UserMDL>?)!!)
             rv.setHasFixedSize(true)
-            rv.layoutManager = GridLayoutManager(this, 3)
-            rv.adapter = adListAdapter
+            rv.layoutManager = GridLayoutManager(this, 2)
+            rv.adapter = userListAdapter
 //        rv.itemAnimator = LandingAnimator()
 
         }
 
 
 
-    }
-
-    override fun onPopupMenuClick(view: View, pos: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 

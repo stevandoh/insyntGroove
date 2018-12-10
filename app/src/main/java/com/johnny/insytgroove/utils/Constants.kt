@@ -1,6 +1,4 @@
-package com.johnny.behwe.utils
-
-import java.util.HashMap
+package com.johnny.insytgroove.utils
 
 /**
  * Created by SOVAVY on 4/25/2017.

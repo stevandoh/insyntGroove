@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="10dp"
     app:cardBackgroundColor="#fff"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true">
@@ -13,17 +13,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/channelCard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp" >
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/itemImage"
-            android:layout_width="0dp"
-            android:layout_height="96dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
             android:scaleType="fitCenter"
             android:src="@drawable/default_img"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,24 +46,37 @@
 
 
         <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/itemImage"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:gravity="center_horizontal"
-            android:text="Sample title"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@android:color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemImage"
-            android:scrollHorizontally="true"
-            android:ellipsize="end"
-            android:maxLines="1"
-            />
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemImage"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:gravity="center_horizontal"
+                android:text="Sample title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemImage"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginStart="4dp" android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.0"/>
+        <ImageButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_more_vert_black"
+                android:id="@+id/imgBtnMenu" app:layout_constraintStart_toEndOf="@+id/tvTitle"
+                android:layout_marginStart="8dp"
+                android:background="@color/md_white_1000"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="4dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/itemImage"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

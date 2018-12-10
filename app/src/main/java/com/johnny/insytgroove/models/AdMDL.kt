@@ -1,4 +1,4 @@
-package com.johnny.behwe.models
+package com.johnny.insytgroove.models
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

@@ -1,7 +1,6 @@
-package com.johnny.behwe.services
+package com.johnny.insytgroove.services
 
-import com.johnny.behwe.utils.networkUtils.BaseInterceptor
-import com.johnny.behwe.utils.networkUtils.CustomInterceptor
+import com.johnny.insytgroove.utils.networkUtils.BaseInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,7 +18,7 @@ object RetrofitClient {
         val client = OkHttpClient.Builder()
             .addInterceptor(interceptor)
             .addInterceptor(baseInterceptor)
-            .addInterceptor(CustomInterceptor())
+//            .addInterceptor(CustomInterceptor())
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
             .writeTimeout(120, TimeUnit.SECONDS)

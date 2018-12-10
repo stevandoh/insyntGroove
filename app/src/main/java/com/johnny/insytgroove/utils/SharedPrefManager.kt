@@ -1,10 +1,10 @@
-package com.johnny.behwe.utils
+package com.johnny.insytgroove.utils
 
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.johnny.behwe.utils.Constants.ID_TOKEN
-import com.johnny.behwe.utils.Constants.IS_LOGGED_IN
+import com.johnny.insytgroove.utils.Constants.ID_TOKEN
+import com.johnny.insytgroove.utils.Constants.IS_LOGGED_IN
 
 
 class SharedPrefManager(internal var mContext: Context) {

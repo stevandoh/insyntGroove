@@ -1,4 +1,4 @@
-package com.johnny.behwe.pojo
+package com.johnny.insytgroove.pojo
 
 import com.google.gson.annotations.SerializedName
 

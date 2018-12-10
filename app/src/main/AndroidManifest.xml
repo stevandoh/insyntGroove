@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.johnny.behwe">
+          package="com.johnny.insytgroove">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -20,15 +20,6 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN"/> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
-            <!-- </intent-filter> -->
-        </activity>
         <activity
                 android:name=".activities.SigninActivity"
                 android:screenOrientation="portrait">
@@ -39,26 +30,13 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".activities.SignupActivity"
-                android:screenOrientation="portrait">
-        </activity>
-        <activity
-                android:name=".activities.ResetPasswordActivity"
-                android:screenOrientation="portrait">
-        </activity>
-        <activity
-                android:name=".activities.CreateAdActivity"
-                android:label="@string/title_activity_create_ad"
-                android:screenOrientation="portrait">
-        </activity>
-        <activity
-                android:name=".activities.UserManagementActivity"
-                android:label="@string/title_activity_user_management"
+                android:name=".activities.DashboardActivity"
+                android:label="@string/title_activity_dashboard"
                 android:theme="@style/AppTheme">
         </activity>
         <activity
-                android:name=".activities.WalletActivity"
-                android:label="@string/title_activity_wallet"
+                android:name=".activities.PostListActivity"
+                android:label="@string/title_activity_post_list"
                 android:theme="@style/AppTheme">
         </activity>
     </application>

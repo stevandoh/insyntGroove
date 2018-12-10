@@ -1,4 +1,4 @@
-package com.johnny.behwe.utils
+package com.johnny.insytgroove.utils
 
 open class BillingUtils {
 

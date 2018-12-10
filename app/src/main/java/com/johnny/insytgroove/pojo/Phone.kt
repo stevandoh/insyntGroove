@@ -1,4 +1,4 @@
-package com.johnny.behwe.pojo
+package com.johnny.insytgroove.pojo
 
 
 open class Phone {

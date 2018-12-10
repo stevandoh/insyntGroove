@@ -1,8 +1,8 @@
-package com.johnny.behwe.utils;
+package com.johnny.insytgroove.utils;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
-import com.johnny.behwe.R;
+import com.johnny.insytgroove.R;
 
 
 public class ItemClickSupport {

@@ -1,4 +1,4 @@
-package com.johnny.behwe
+package com.johnny.insytgroove
 
 import org.junit.Test
 

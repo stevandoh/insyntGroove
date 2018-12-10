@@ -1,4 +1,4 @@
-package com.johnny.behwe.utils
+package com.johnny.insytgroove.utils
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Activity
@@ -8,7 +8,7 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.view.animation.Interpolator
 import android.widget.ImageView
-import com.johnny.behwe.R
+import com.johnny.insytgroove.R
 
 /**
  * [android.view.View.OnClickListener] used to translate the product grid sheet downward on

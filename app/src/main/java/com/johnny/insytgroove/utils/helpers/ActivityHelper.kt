@@ -2,13 +2,8 @@
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.Intent
 import com.afollestad.materialdialogs.MaterialDialog
-import com.johnny.behwe.R
-
-
-
-import com.vicpin.krealmextensions.deleteAll
+import com.johnny.insytgroove.R
 
 class ActivityHelper {
 

@@ -1,12 +1,12 @@
-package com.johnny.behwe.utils
+package com.johnny.insytgroove.utils
 
 import android.content.Context
 import com.afollestad.materialdialogs.MaterialDialog
 import com.google.gson.GsonBuilder
-import com.johnny.behwe.AppController
-import com.johnny.behwe.R
-import com.johnny.behwe.models.UserProfileMDL
-import com.johnny.behwe.pojo.ServerResponse
+import com.johnny.insytgroove.AppController
+import com.johnny.insytgroove.R
+import com.johnny.insytgroove.models.UserProfileMDL
+import com.johnny.insytgroove.pojo.ServerResponse
 import okhttp3.ResponseBody
 import retrofit2.Response
 import java.io.*

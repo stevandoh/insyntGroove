@@ -1,4 +1,4 @@
-package com.johnny.behwe.utils.networkUtils
+package com.johnny.insytgroove.utils.networkUtils
 
 import okhttp3.Interceptor
 import okhttp3.Response
