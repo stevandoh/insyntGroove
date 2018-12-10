@@ -11,8 +11,7 @@
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/channelCard"
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
@@ -68,7 +67,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_more_vert_black"
-                android:id="@+id/imgBtnMenu" app:layout_constraintStart_toEndOf="@+id/tvTitle"
+                app:layout_constraintStart_toEndOf="@+id/tvTitle"
                 android:layout_marginStart="8dp"
                 android:background="@color/md_white_1000"
                 android:visibility="gone"

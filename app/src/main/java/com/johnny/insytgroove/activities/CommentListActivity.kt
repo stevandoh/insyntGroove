@@ -26,7 +26,7 @@ import io.realm.RealmList
 
 
 import kotlinx.android.synthetic.main.activity_comment_list.*
-import kotlinx.android.synthetic.main.content_dashboard.*
+import kotlinx.android.synthetic.main.content_comment_list.*
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -50,12 +50,12 @@ class CommentListActivity : AppCompatActivity() {
 
 
         postId = intent.getIntExtra("postId",0)
-        fab.setOnClickListener { view ->
-
-
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//        fab.setOnClickListener { view ->
+//
+//
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+//        }
 
         populateList()
     }

@@ -28,10 +28,10 @@ class CreateCommentActivity : AppCompatActivity() {
         }
 
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//        fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+//        }
 
         postId = intent.getIntExtra("postId", 0)
 
@@ -104,7 +104,7 @@ class CreateCommentActivity : AppCompatActivity() {
         MaterialDialog(this@CreateCommentActivity).show {
             title(text = "Comment Saved")
             message(text = "Your comment has been successfully saved")
-            positiveButton(R.string.agree) { dialog ->
+            positiveButton(R.string.agree) { _ ->
                 startActivity(
                     Intent(this@CreateCommentActivity, DashboardActivity::class.java)
                 )

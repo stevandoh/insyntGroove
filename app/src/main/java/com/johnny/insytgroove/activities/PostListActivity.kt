@@ -19,7 +19,8 @@ import com.johnny.insytgroove.utils.ItemClickSupport
 import com.johnny.insytgroove.utils.SharedPrefManager
 import com.vicpin.krealmextensions.query
 import kotlinx.android.synthetic.main.activity_post_list.*
-import kotlinx.android.synthetic.main.content_dashboard.*
+import kotlinx.android.synthetic.main.content_post_list.*
+
 
 class PostListActivity : AppCompatActivity() {
     private var mSharedPrefManager: SharedPrefManager? = null
@@ -37,10 +38,10 @@ class PostListActivity : AppCompatActivity() {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         }
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//        fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+//        }
 
         userId = intent.getIntExtra("userId", 0)
 

@@ -43,10 +43,10 @@
                     android:visibility="gone"
                     android:textAppearance="@style/TextAppearance.Shrine.Title" />
             <ProgressBar
+                    android:id="@+id/progressBar"
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/progressBar"
                     android:visibility="gone"
                     android:layout_gravity="center"
             />

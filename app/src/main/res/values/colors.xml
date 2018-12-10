@@ -8,9 +8,7 @@
     <!--<color name="colorPrimaryDark">#FBB8AC</color>-->
     <!--<color name="colorAccent">#FEDBD0</color>-->
     <color name="textColorPrimary">#273a46</color>
-    <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
-    <color name="productGridBackgroundColor">#FFFBFA</color>
     <color name="colorControlActivated">#70bef0</color>
     <color name="textColorSecondary">#e0e0e0</color>
 </resources>
