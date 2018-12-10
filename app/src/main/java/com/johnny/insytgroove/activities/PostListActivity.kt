@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.list.listItems
 import com.google.android.material.snackbar.Snackbar
 import com.johnny.insytgroove.R
 import com.johnny.insytgroove.adapters.PostListAdapter
@@ -46,19 +47,28 @@ class PostListActivity : AppCompatActivity() {
         populateList()
         ItemClickSupport.addTo(rv).setOnItemClickListener { _, position, _ ->
             GenUtils.getToastMessage(applicationContext, position.toString())
-            MaterialDialog(this).show {
-                title(text = "Add comment")
-                message(text = "Do you want to add a comment?")
-                positiveButton(R.string.agree) { dialog ->
-                    startActivity(
-                        Intent(this@PostListActivity, CreateCommentActivity::class.java)
-                            .putExtra("postId", postsMDLs!![position].id)
-                    )
-                }
 
+            MaterialDialog(this).show {
+
+                listItems(R.array.socialNetworks)
             }
+            displayDialog(position)
         }
 
+    }
+
+    private fun displayDialog(position: Int) {
+        MaterialDialog(this@PostListActivity).show {
+            title(text = "Add comment")
+            message(text = "Do you want to add a comment?")
+            positiveButton(R.string.agree) { dialog ->
+                startActivity(
+                    Intent(this@PostListActivity, CreateCommentActivity::class.java)
+                        .putExtra("postId", postsMDLs!![position].id)
+                )
+            }
+
+        }
     }
 
 

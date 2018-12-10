@@ -35,7 +35,11 @@
     <string name="title_activity_create">Create Ad</string>
     <string name="title_activity_dashboard">Dashboard</string>
     <string name="title_activity_post_list">Posts</string>
-    <string name="title_activity_comment_list">CommentListActivity</string>
-    <string name="title_activity_create_comment">CreateCommentActivity</string>
+    <string name="title_activity_comment_list">Comments List</string>
+    <string name="title_activity_create_comment">Create a Comment</string>
     <string name="agree">Yes</string>
+    <string name="hint_comment">comment</string>
+    <string name="hint_email">Email</string>
+    <string name="button_submit">Submit</string>
+    <string name="hint_title">Title</string>
 </resources>

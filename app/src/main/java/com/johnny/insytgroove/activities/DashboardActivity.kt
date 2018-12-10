@@ -79,32 +79,6 @@ class DashboardActivity : AppCompatActivity() {
                     .withIdentifier(Constants.DRAWER_HOME)
                     .withIcon(GoogleMaterial.Icon.gmd_home),
                 PrimaryDrawerItem()
-                    .withName(getString(R.string.drawer_create_ad))
-                    .withSelectable(false)
-                    .withIdentifier(Constants.DRAWER_CREATE_AD)
-                    .withIcon(GoogleMaterial.Icon.gmd_games),
-                PrimaryDrawerItem()
-                    .withName("Profile")
-                    .withSelectable(false)
-                    .withIdentifier(Constants.DRAWER_PROFILE)
-                    .withIcon(GoogleMaterial.Icon.gmd_person_pin_circle),
-                DividerDrawerItem(),
-                PrimaryDrawerItem()
-                    .withName("FAQs")
-                    .withSelectable(false)
-                    .withIdentifier(Constants.DRAWER_FAQS)
-                    .withIcon(GoogleMaterial.Icon.gmd_question_answer),
-//                PrimaryDrawerItem()
-//                    .withName("About")
-//                    .withSelectable(false)
-//                    .withIdentifier(Constants.DRAWER_CONTACT_US)
-//                    .withIcon(GoogleMaterial.Icon.gmd_contact_phone),
-                PrimaryDrawerItem()
-                    .withName("Terms and conditions")
-                    .withSelectable(false)
-                    .withIdentifier(Constants.DRAWER_T_AND_C)
-                    .withIcon(GoogleMaterial.Icon.gmd_info),
-                PrimaryDrawerItem()
                     .withName("Logout")
                     .withSelectable(false)
                     .withIdentifier(Constants.DRAWER_SIGNOUT)

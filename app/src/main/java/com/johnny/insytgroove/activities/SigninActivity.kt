@@ -172,6 +172,7 @@ class SigninActivity : AppCompatActivity() {
         })
 
     }
+
     override fun onDestroy() {
         super.onDestroy()
 
